@@ -1,6 +1,10 @@
-
 \usepackage[a4paper, hmargin=25mm, vmargin=30mm, top=20mm]{geometry} % Use A4 paper and set margins
 \usepackage{hyperref} % Colors for links, text and headings
+
+% To toggle between text
+\usepackage{environ}
+\usepackage{etoolbox}
+\newtoggle{show} % show is initially false
 
 % Font settings
 \usepackage[proportional,scaled=1]{erewhon}
@@ -19,6 +23,9 @@
 \newlength{\smallertextwidth}
 \setlength{\smallertextwidth}{\textwidth}
 \addtolength{\smallertextwidth}{-2cm}
+
+% Tab to absolute positions
+\usepackage{tabto}
 
 % Define square bullet
 \newcommand{\sqbullet}{~\vrule height 1ex width .8ex depth -.2ex} % Custom square bullet point definition
@@ -118,14 +125,15 @@
 }
 
 % Reference Command
-\newcommand{\reference}[4]{
+\newcommand{\reference}[5]{
 	\parbox{0.5\textwidth}{
 		\begin{tabbing}
-			\hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
+			\hspace{2.75cm} \= \kill % Spacing within the block
 			{\bf Name:} \> #1 \\ % Referee name
 			{\bf Institution:} \> #2 \\ % Referee company
 			{\bf Position:} \> #3 \\ % Referee job title 
-			{\bf Email:} \> #4
+			{\bf Email:} \> #4 \\
+			{\bf Phone:} \> #5 \\
 		\end{tabbing}
 	}
 }

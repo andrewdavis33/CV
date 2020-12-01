@@ -1,8 +1,10 @@
 % Curriculum Vitae
 % Inspiration and Structure from https://github.com/watsonbox/cv_template_2004
-
 \documentclass[10pt]{article} % Default font size
 \input{structure.tex} % Include the file specifying document layout
+
+\settoggle{show}{false} % toggle to show gpa and other student-y stuff
+
 \begin{document}
 
 	% Title and Contact Info
@@ -18,28 +20,29 @@
 	%	Education Section
 	\section{Education}
 	\tabbedblock{
-	\bf{2017 - 2018} \> M.S. in Computer Science | Stanford University\\
-	\> GPA: 4.0 | Advisor: Chris Gregg
+	\bf{2018} \> M.S. in Computer Science | Stanford University
+	\iftoggle{show}{\\  \> GPA: 4.0 | Advisor: Chris Gregg}{}
 	}
 	
 	\tabbedblock{
-		\bf{2013 - 2017} \> Ph.D. in Music Composition | University of Pennsylvania\\
+		\bf{2017} \> Ph.D. in Music Composition | University of Pennsylvania
+		\iftoggle{show}{\\
 		\> GPA: 3.98 | Advisor: Anna Weesner \\
 		\\
 		\> \begin{minipage}{\smallertextwidth}
 			Additional studies at Curtis Institute of Music in conducting under Paul Bryan and Jonathan Coopersmith 
 		\end{minipage}
-		
+		}{}
 	}
 	
 	\tabbedblock{
-		\bf{2010 - 2012} \> M.M. in Music Composition | University of Texas at Austin \\
-		\> GPA: 4.0 | Phi Kappa Pi 
+		\bf{2012} \> M.M. in Music Composition | University of Texas at Austin 
+		\iftoggle{show}{\\\> GPA: 4.0 | Phi Kappa Pi }{}
 	}
 	
 	\tabbedblock{
-		\bf{2005 - 2009}\> B.A. in Music | Yale University \\
-		\> GPA: 3.83 | Cum Laude | Distinction in the Major
+		\bf{2009}\> B.A. in Music | Yale University 
+		\iftoggle{show}{\\\> GPA: 3.83 | Cum Laude | Distinction in the Major}{}
 	}
 	
 	\section{Academic Positions}
@@ -51,12 +54,18 @@
 	
 	\section{Major Academic Projects}
 	
+	\project{Sept. 2020 - }{Present}{\textit{sckernel}: a kernel for Jupyter Notebooks}{\url{https://github.com/andrewdavis33/sckernel}}{
+	\textit{sckernel} is a kernel for Jupyter Notebooks, an online platform for interactive code.  Jupyter Notebooks
+	provide a clean, easy-to-read interface for interactive Python code.  The framework for Jupyter Notebooks
+	allows for user-written kernels to support programming languages besides Python.  \textit{sckernel} integrates
+	with Jupyter Notebooks to provide web-based interaction with SuperCollider.
+	}
+	
 	\project{June 2020 - }{Present}{Introductory Resources for DFT Analysis and Synthesis}{\url{https://github.com/andrewdavis33/DFT-Guide}}
 	{
 		A comprehensive, introductory guide to Discrete Fourier Transform in the context of audio for musicians and programmers.  Much material
-		for signal processing and Fourier analysis is too arcane for introductory students to the field of digital signal 
-		processing.  This guide serves to lead newcomers through an intuitive derivation of the DFT and use a series
-		of musical examples to articulate important theoretical and practical understanding.  Future work for the project
+		for signal processing and Fourier analysis is too arcane for introductory students.  
+		This guide serves to lead newcomers through an intuitive derivation of the DFT and uses musical examples to articulate important theoretical and practical concepts.  Future work for the project
 		involves creating visual demonstrations and short YouTube videos to better illustrate principles of the DFT.
 	}
 	
@@ -66,6 +75,7 @@
 		development of Fourier techniques as well as UGens for server-side processing.
 	}
 	
+	\newpage
 	\section{Teaching Experience}
 	
 	\smallHeader{Wellesley College}
@@ -75,7 +85,7 @@
 		Music} was designed from scratch by myself, including all slides, assignments, and website.  I have
 		taught \textit{Computer Programming and Problem Solving Methodologies} in a team format where
 		multiple instructors teach separate sections of the same course but work together to devise course
-		content and structure as well as manage students needs for an introductory course of over 100 students
+		content and structure as well as manage student needs for an introductory course of over 100 students
 		per semester.\\
 		\\
 		\textit{Introduction to Computer Music}: \url{https://cs.wellesley.edu/~cs203/}\\
@@ -85,14 +95,14 @@
 		First course in programming for CS majors on programming paradigms, recursion, and data structures \\
 		\\
 		\textit{Foundations of Computer Systems}: \url{https://cs.wellesley.edu/~cs240}\\
-		An introduction to software systems, machine organization and architecture, and digital logic 
+		An introduction to software systems, machine organization, and architecture, and digital logic 
 	}
 	
 	\smallHeader{Stanford University}
 	
 	\positionBlock{Winter 2018 -}{Summer 2018}{Graduate Assistant:
-		I served as a graduate assistant for the courses listed below.  My main duties were to hold office
-		hours on campus and answer questions about course content on our online platform Piazza.\\
+		I served as a graduate assistant for the courses listed below.  My main duties included holding office
+		hours on campus and answering questions about course content through Piazza.\\
 		\\
 		\textit{Probability for Computer Scientists}: \url{http://web.stanford.edu/class/cs109/}\\
 		A mathematical overview of topics from basic counting to logistic regression\\
@@ -104,18 +114,18 @@
 	\smallHeader{University of Pennsylvania}
 	
 	\positionBlock{Fall 2014 -}{Spring 2016}{Graduate Assistant:
-		I taught a range of introductory music courses.  Though I was a graduate students, I was the
+		I taught a range of introductory music courses.  Though I was a graduate student, I was the
 		primary instructor for all courses listed below.  I was responsible for curriculum development
 		for both musicianship courses.\\
 		\\
 		\textit{Introductory Theory and Musicianship}\\
-		An introductory course on the basics of music notation and theory for non-music majors\\
+		An introduction to the basics of music notation, theory, and ear-training for non-music majors\\
 		\\
 		\textit{Music Theory and Labratory II} \\
-		Second course in musicianship designed for first-years and sophomores\\
+		Second course in musicianship designed for first-year and sophomore music majors\\
 		\\
 		\textit{Music Theory and Labratory I}\\
-		First course in musicianship designed for first-years and sophomore
+		First course in musicianship designed for first-year and sophomore music majors
 	}
 	
 	\section{Service Experience}
@@ -124,18 +134,19 @@
 	\positionBlock{Fall 2019 -}{Present}{
 		\textit{Tutoring Coordinator}:
 		The tutor coordinator manages tutors across the department and serves as liaison between the 
-		department and the learning center on campus that governs tutoring across the college.  The 
-		tutor coordinator organizes tutor training and coordinates with faculty on the hiring of tutors.
+		department and the learning center on campus that governs tutoring across the College.  The 
+		tutor coordinator organizes tutor training and coordinates with faculty to hire tutors.
 	}
 	
 	\positionBlock{Fall 2019 - }{Spring 2020}{
 		\textit{Curriculum Committee Member}:
 		The Curriculum Committee is responsible for evaluating and amending the department's offering
 		of courses.  The Curriculum Committee works with the department's Diversity and Inclusion
-		Committee to asses the impact of the department's offerings on inclusion.  During my time on
-		the committee, we pushed to change the introductory sequence from a two-course model to a
-		three-course model to alleviate the quick pace of the sequence and to better match student's
-		previous exposure with CS to the appropriate course.
+		Committee to assess the impact of the department's offerings on inclusion.  During my time on
+		the committee, we submitted a formal proposal to change the  introductory sequence from a 
+		two-course model to a three-course model to alleviate the quick pace of the sequence and to 
+		better match students' previous exposure with CS to the appropriate course.  We expect the
+		proposal to be approved and implented by the College shortly.  
 	}
 	
 	\positionBlock{Fall 2019 -}{Present}{
@@ -146,15 +157,15 @@
 	
 	\positionBlock{Fall 2019 -}{Present}{
 		\textit{First-Year Advisor}: First-Year Advisors serve a term of three years and mentor six first-year
-		students each year.  Their primary responsibility is helping student choose 
-		courses that match their interest and ensuring that students understand distributional
+		students each year.  First-Year Advisors' are responsible for helping students choose 
+		courses that match their interests and ensuring that students understand distributional
 		requirements and create a balanced schedule.
 	}
 	
 	\positionBlock{Fall 2019 -}{Present}{
 		\textit{CS Poster Advisor}: CS Poster Advisors work with two seniors each year and guide them
-		through a year-long project that culminates in department-wide poster session.  Topics that
-		students have chosen have ranged from algorithmic design for neuroscience to AI studies on
+		through a year-long project that culminates in department-wide poster session.  Topics 
+		on which I have advised have ranged from algorithmic design in neuroscience to AI studies on
 		music recognition.
 	}
 	
@@ -175,7 +186,8 @@
 	\achievement{2014}{ASCAP Morton gould Awards: Finalist - \textit{Black Mamba}}
 	\achievement{2013}{MACRO Competition: Honorable Mention - \textit{Open Airs}}
 	\achievement{2013}{BMI Student Composer Award: Finalist - \textit{Midnight Drearies}}
-	\achievement{2012-2013}{ASCAP Plus Award}
+	\achievement{2013}{ASCAP Plus Award}
+	\achievement{2012}{ASCAP Plus Award}
 	\achievement{2012}{Boston New Music Initiative Commissioning Competition: Finalist - \textit{Black Mamba}}
 	\achievement{2012}{Choral New Music Initiative: Winner - \textit{Holidays}}
 	
@@ -262,12 +274,16 @@
 	}
 	
 	\skillgroup{Programming Languages}{
-		\textit{C}, \textit{C++}, \textit{Python}, \textit{Java}, \textit{Standard ML}
+		\textit{C}, \textit{C++}, \textit{Python}, \textit{Java}
 	}
 	
 	\skillgroup{Web Development}{
 		\textit{HTML5}, \textit{CSS3/SASS}, \textit{JavaScript}, \textit{Jekyll}\\
 	}
+
+	%\section{Diversity Training}
+	%\achievement{2020}{21 Days Against Racism}
+	%\achievement{2021}{Change Agent Training}
 	
 	\section{Professional Societies and Affiliations}
 	
@@ -278,9 +294,11 @@
 	
 	\section{References}
 	
-	\reference{Anna Weesner}{Univ. of Pennsylvania}{Professor of Music}{weesner@sas.upenn.edu}
-	\hfill 
-	\reference{James Primosch}{Univ. of Pennsylvania}{Professor of Music}{primosch@sas.upenn.edu}
-	\reference{Chris Gregg}{Stanford University}{Lecturer of Computer Science}{cgregg@stanford.edu}
+	\reference{Anna Weesner}{Univ. of Pennsylvania}{Professor of Music}{weesner@sas.upenn.edu}{(215) 898-7544}
+	\tabto{3.5in}
+	\reference{James Primosch}{Univ. of Pennsylvania}{Professor of Music}{primosch@sas.upenn.edu}{(215) 898-7544}\\
+	\reference{Chris Gregg}{Stanford University}{Lecturer of Computer Science}{cgregg@stanford.edu}{(857) 234-0211}
+	\tabto{3.5in}
+	\reference{Jay Reise}{Univ. of Pennsylvania}{Professor of Music}{jreise@sas.upenn.edu}{(215) 898-7544}
 
 \end{document}
